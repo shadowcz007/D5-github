@@ -29,6 +29,11 @@
             --shadow-lg: 0 10px 20px rgba(0,0,0,0.1);
         }
 
+        /* Google 彩色点 */
+        .g-colors span {
+            display: inline-block;
+        }
+
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg-primary);
@@ -896,6 +901,520 @@
             background: rgba(52,168,83,0.06);
             border-color: var(--accent-green);
         }
+
+        /* ============================================
+           Google Modern Minimalist Style Override
+           Applied to content AFTER the 闭环 section
+           ============================================ */
+
+        .google-style {
+            background: #FFFFFF;
+        }
+
+        .google-style .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .google-style .section {
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .google-style .section-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #202124;
+        }
+
+        .google-style .section-title .number {
+            background: none;
+            -webkit-text-fill-color: #4285F4;
+            color: #4285F4;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 1;
+        }
+
+        .google-style .链路图 {
+            background: #F8F8F8;
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+        }
+
+        .google-style .flow-node {
+            background: #FFFFFF;
+            border: 1px solid #E8EAED;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 180px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .flow-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #4285F4;
+        }
+
+        .google-style .flow-node.github { border-color: #4285F4; background: rgba(66,133,244,0.05); }
+        .google-style .flow-node.vercel { border-color: #9334E6; background: rgba(147,52,230,0.05); }
+
+        .google-style .flow-node .name { font-weight: 600; font-size: 1.1rem; color: #202124; }
+        .google-style .flow-node .desc { font-size: 0.85rem; color: #5F6368; }
+
+        .google-style .flow-arrow {
+            font-size: 2rem;
+            color: #4285F4;
+            font-weight: 300;
+            animation: none;
+        }
+
+        .google-style .git-commands {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .google-style .git-cmd {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #E8EAED;
+        }
+
+        .google-style .git-cmd:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .google-style .git-cmd .cmd { color: #4285F4; font-size: 0.95rem; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+        .google-style .git-cmd .desc { font-size: 0.85rem; color: #5F6368; }
+
+        .google-style .boxes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .google-style .boxes-container { grid-template-columns: 1fr; }
+        }
+
+        .google-style .box {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid #E8EAED;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .google-style .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .google-style .box.build::before { background: #4285F4; }
+        .google-style .box.deploy::before { background: #34A853; }
+        .google-style .box.monitor::before { background: #9334E6; }
+
+        .google-style .box-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .google-style .box h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #202124; }
+        .google-style .box p { font-size: 0.9rem; color: #5F6368; }
+
+        .google-style .agent-section {
+            background: linear-gradient(135deg, rgba(66,133,244,0.05), rgba(147,52,230,0.05));
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid #E8EAED;
+        }
+
+        .google-style .agent-prompt {
+            background: #1E1E1E;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            color: #4285F4;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .google-style .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .google-style .step {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid #E8EAED;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .step:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .google-style .step-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            cursor: pointer;
+            background: #FFFFFF;
+        }
+
+        .google-style .step-number {
+            width: 44px;
+            height: 44px;
+            background: #4285F4;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .google-style .step-title h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; color: #202124; }
+        .google-style .step-title p { font-size: 0.9rem; color: #5F6368; }
+
+        .google-style .step-toggle {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #F8F8F8;
+            transition: transform 0.3s;
+            color: #5F6368;
+        }
+
+        .google-style .step.open .step-toggle {
+            transform: rotate(180deg);
+            background: #4285F4;
+            color: white;
+        }
+
+        .google-style .step-content-inner { padding: 0 2rem 2rem; }
+
+        .google-style .code-block {
+            background: #1E1E1E;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .google-style .code-block pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: #E8EAED;
+        }
+
+        .google-style .code-block .comment { color: #6B7280; }
+        .google-style .code-block .keyword { color: #C678DD; }
+        .google-style .code-block .string { color: #98C379; }
+        .google-style .code-block .variable { color: #E5C07B; }
+
+        .google-style .interactive-flow {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid #E8EAED;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .flow-track { position: relative; padding: 2rem 0; }
+
+        .google-style .track-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #E8EAED;
+            border-radius: 2px;
+        }
+
+        .google-style .track-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4285F4, #34A853);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .google-style .track-stops { display: flex; justify-content: space-between; position: relative; }
+        .google-style .track-stop { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+
+        .google-style .stop-icon {
+            width: 60px;
+            height: 60px;
+            background: #FFFFFF;
+            border: 3px solid #E8EAED;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .track-stop.active .stop-icon {
+            border-color: #4285F4;
+            background: rgba(66,133,244,0.1);
+            transform: scale(1.1);
+        }
+
+        .google-style .track-stop.completed .stop-icon {
+            border-color: #34A853;
+            background: #34A853;
+        }
+
+        .google-style .stop-label { font-size: 0.875rem; font-weight: 500; color: #5F6368; }
+        .google-style .track-stop.active .stop-label { color: #4285F4; }
+
+        .google-style .flow-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+
+        .google-style .flow-btn {
+            padding: 0.75rem 1.5rem;
+            background: #FFFFFF;
+            border: 1px solid #E8EAED;
+            border-radius: 8px;
+            color: #202124;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .flow-btn:hover {
+            background: #4285F4;
+            border-color: #4285F4;
+            color: white;
+        }
+
+        .google-style .知识-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .google-style .知识-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid #E8EAED;
+        }
+
+        .google-style .知识-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .google-style .知识-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .google-style .知识-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: #202124; }
+        .google-style .知识-card p { font-size: 0.9rem; color: #5F6368; line-height: 1.7; }
+
+        .google-style .cicd-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding: 2rem;
+            background: #FFFFFF;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 1px solid #E8EAED;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .cicd-node {
+            background: #F8F8F8;
+            border-radius: 14px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .google-style .cicd-node:hover { background: rgba(66,133,244,0.1); }
+        .google-style .cicd-node .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .google-style .cicd-arrow { color: #4285F4; font-size: 1.25rem; font-weight: 300; animation: none; }
+
+        .google-style .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .google-style .faq-item {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid #E8EAED;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .google-style .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .google-style .faq-question:hover { background: #F8F8F8; }
+
+        .google-style .faq-question .q {
+            width: 28px;
+            height: 28px;
+            background: #4285F4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .google-style .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .google-style .faq-item.open .faq-answer { max-height: 300px; }
+        .google-style .faq-answer-inner {
+            padding: 0 1.5rem 1.5rem 4rem;
+            color: #5F6368;
+            font-size: 0.9rem;
+        }
+
+        .google-style .tip-box {
+            background: rgba(66,133,244,0.06);
+            border-left: 4px solid #4285F4;
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .google-style .tip-box.warning {
+            background: rgba(234,67,53,0.06);
+            border-color: #EA4335;
+        }
+
+        .google-style .tip-box.success {
+            background: rgba(52,168,83,0.06);
+            border-color: #34A853;
+        }
+
+        .google-style .闭环 {
+            background: #F8F8F8;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .google-style .闭环::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4285F4, #34A853);
+        }
+
+        .google-style .闭环 h2 {
+            font-size: 1.25rem;
+            color: #202124;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .google-style .闭环 p {
+            font-size: 1rem;
+            color: #5F6368;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        .google-style .闭环 code {
+            background: rgba(66,133,244,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #4285F4;
+            font-size: 0.9em;
+        }
+
+        /* 响应式覆盖 */
+        .google-style @media (max-width: 768px) {
+            .google-style .nav-links { display: none; }
+            .google-style .flow-diagram { flex-direction: column; }
+            .google-style .flow-arrow { transform: rotate(90deg); }
+            .google-style .flow-node { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -903,13 +1422,13 @@
     <nav class="nav">
         <div class="nav-inner">
             <div class="nav-brand">
-                <div class="g-colors">
-                    <div class="g-dot blue"></div>
-                    <div class="g-dot red"></div>
-                    <div class="g-dot yellow"></div>
-                    <div class="g-dot green"></div>
+                <div class="g-colors" style="display:flex;gap:4px;align-items:center;">
+                    <span style="width:10px;height:10px;border-radius:50%;background:#4285F4;"></span>
+                    <span style="width:10px;height:10px;border-radius:50%;background:#EA4335;"></span>
+                    <span style="width:10px;height:10px;border-radius:50%;background:#FBBC05;"></span>
+                    <span style="width:10px;height:10px;border-radius:50%;background:#34A853;"></span>
                 </div>
-                <span>Git → Vercel</span>
+                <span style="margin-left:8px;">Git → Vercel</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#闭环">闭环</a></li>
@@ -954,7 +1473,11 @@
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">首次也可通过 Dashboard Import 仓库或 <code>vercel link</code> 把 Git 与项目连上。</p>
             </div>
         </section>
+    </div>
 
+    <!-- Google Minimalist Style Sections -->
+    <div class="google-style">
+    <div class="container">
         <!-- 一条链路 -->
         <section class="section" id="链路">
             <h2 class="section-title">
@@ -1368,6 +1891,7 @@ vercel --prod</pre>
                 </p>
             </div>
         </section>
+    </div>
     </div>
 
     <script>
